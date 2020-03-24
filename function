@@ -1,0 +1,25 @@
+# open vip_hrex file one time as a dict
+# we suppose the first line has a comment
+d = {}
+f = open("dict.txt")
+try:
+    next(f)
+    for line in f:
+       (key, val) = line.split()
+       d[key] = val
+finally:
+    f.close()
+
+
+
+
+
+# function to return key for any value 
+def get_key(val, dict_): 
+    for key, value in dict_.items(): 
+         if val == value: 
+                return key 
+  
+    return "key doesn't exist"
+    
+   
